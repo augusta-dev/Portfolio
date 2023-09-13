@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'baloo_thambi_2bold';
+            src: url('Baloo Thambi 2 fontt/baloothambi2-bold-webfont.woff2') format('woff2'),
+                url('Baloo Thambi 2 fontt/baloothambi2-bold-webfont.woff') format('woff');
+
+
+        }
+        body {
+            background-color: #0c111c;
+            font-family: 'baloo_thambi_2bold', sans-serif;
+            background-image: radial-gradient(circle at center, #899dc4, #495d84);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 90vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0c1110;
+            font-weight: 300;
+            background: #01112F;
+            background: -webkit-radial-gradient(bottom right, #01112F, #0D121C);
+            background: -moz-radial-gradient(bottom right, #01112F, #0D121C);
+            background: radial-gradient(to top left, #01112F, #0D121C);
+        }
+        .all {
+            display: flex;
+            perspective: 10px;
+            transform: perspective(300px) rotateX(20deg);
+            will-change: perspective;
+            perspective-origin: center center;
+            transition: all 1.3s ease-out;
+            justify-content: center;
+            transform-style: preserve-3d;
+        }
+        .all:hover {
+            perspective: 1000px;
+            transition: all 1.3s ease-in;
+            transform: perspective(10000px) rotateX(0deg);
+        }
+        .all:hover .text {
+            opacity: 1;
+        }
+        .all:hover > div {
+            opacity: 1;
+            transition-delay: 0s;
+        }
+        .all:hover .explainer {
+            opacity: 0;
+        }
+        .left, .center, .right, .lefter, .righter, .side, .side1, .side2, .side3, .side4, .xide, .xide1, .xide2, .xide3, .xide4  {
+            width: 200px;
+            height: 150px;
+            transform-style: preserve-3d;
+            border-radius: 10px;
+            /* border: 1px solid #fff; */
+            box-shadow: 0 0 20px 5px rgba(100, 100, 255, .4);
+            opacity: 0;
+            transition: all 0.3s ease;
+            transition-delay: 1s;
+            position: relative;
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: #00ffFF;
+            /* cursor: pointer; */
+            background-blend-mode: luminosity;
+        }
+
+        .left:hover, .center:hover, .right:hover, .lefter:hover, .righter:hover, .side:hover {
+            box-shadow: 0 0 30px 10px rgba(0, 255, 255, .6);
+            background-color: #00ffff;
+            background-blend-mode: normal;
+        }
+        .lefter {
+            background-size: 60%;
+        }
+        .center {
+            background-size: 90%;
+        }
+        .righter {
+            background-size: 65%;
+        }
+
+        .text {
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            bottom: 0;
+            left: 5px;
+            position: absolute;
+            will-change: transform;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(100, 100, 255, .6);
+        }
+        .lefter {
+            transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
+            background-image: url(mri.png);
+        }
+        
+        .center {
+            opacity: 1;
+            background-image: url(developer2.png);
+        }
+        
+        .righter {
+            transform: translateX(60px) translateZ(-50px) rotateY(10deg);
+            background-image: url(candle.png);
+        }
+        .explainer {
+            font-weight: 300;
+            font-size: 1.3rem;
+            color: #00ffff;
+            transition: all 0.6s ease;
+            width: 100%;
+            height: 100%;
+            background-color: #0c111c;
+            background-image: radial-gradient(circle at center top, #00ffff, #07004D);
+            border-radius: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, .8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        .side {
+            opacity: 0;
+            transform: translateX(300px) translateZ(-50px) rotateY(-10deg);
+            background-image: url(Pages/mri3.jpg);
+        }
+        
+        .side:hover .text, .side3:hover .text, .side4:hover .text, .xide:hover .text, .xide3:hover .text, .xide4:hover .text, .xide1:hover .text, .xide2:hover .text  {
+            opacity: 1;
+        }
+        .side:hover > div, .side3:hover > div, .side4:hover > div, .xide:hover > div, .xide3:hover > div, .xide4:hover > div, .xide1:hover > div, .xide2:hover > div {
+            opacity: 1;
+            transition-delay: 0s;
+
+        }
+        .side:hover, .side1:hover, .side2:hover, .side3:hover, .side4:hover, .xide:hover, .xide2:hover, .xide3:hover, .xide1:hover, .xide4:hover {
+            opacity: 0;
+            perspective: 1000px;
+            width: 570px;
+            height: 300px; 
+            padding: 5px;
+            background-blend-mode: normal;
+            background-color: transparent;
+        }
+            
+        /* .side1:hover, .side3:hover, .side4:hover {
+            /* transition: all 1.3s ease-in; */
+            /* transform: perspective(10000px) rotateX(0deg); */
+        
+        .side:hover {
+            transform: translateX(300px) translateZ(0px) rotateY(0deg) translateY(0px);
+            position: relative;
+            z-index: 2;
+        }
+        .side1 {
+            opacity: 0;
+            transform: translateX(745px) translateZ(-50px) rotateY(-10deg) translateY(-200px);
+            background-image: url(Pages/mri\ second\ page.jpg);
+            
+        }
+        .side1:hover .text {
+            opacity: 1;
+        }
+        .side1:hover > div {
+            opacity: 1;
+            transition-delay: 0s;
+        }
+        .side1:hover {
+            transform: translateX(745px) translateZ(0px) rotateY(0deg) translateY(-200px);
+            position: relative;
+            z-index: 2;
+        }
+        .side2 {
+            opacity: 0;
+            transform: translateX(700px) translateZ(-50px) rotateY(-10deg) translateY(-200px);
+            background-image: url(Pages/mri\ first\ page.jpg);
+        }
+        .side2:hover {
+            transform: translateX(900px) translateZ(0px) rotateY(0deg)translateY(-200px);
+            position: relative;
+            z-index: 2;
+        }
+        .side3 {
+            opacity: 0;
+            transform: translateX(100px) translateZ(-50px) rotateY(-10deg) translateY(200px);
+            background-image: url(Pages/mri\ 5.jpeg);
+        }
+        .side3:hover {
+            transform: translateX(100px) translateZ(0px) rotateY(0deg) translateY(200px);
+            position: relative;
+            z-index: 2;
+        }
+        .side4 {
+            opacity: 0;
+            transform: translateX(150px) translateZ(-50px) rotateY(-10deg) translateY(200px);
+            background-image: url(Pages/mri4.jpg);
+        }
+        .side4:hover {
+            transform: translateX(150px) translateZ(0px) rotateY(0deg) translateY(200px);
+            position: relative;
+            z-index: 2;
+        }
+        .xide {
+            opacity: 0;
+            transform: translateX(-300px) translateZ(-50px) rotateY(10deg) translateY(-200px);
+            background-image: url(Pages/shukrat\ 5.jpeg);
+        }
+        .xide:hover {
+            transform: translateX(-300px) translateZ(0px) rotateY(0deg) translateY(-200px);
+            position: relative;
+            z-index: 2;
+        }
+        .xide2 {
+            opacity: 0;
+            transform: translateX(-140px) translateZ(-50px) rotateY(10deg) translateY(200px);
+            background-image: url(Pages/Web\ capture_18-2-2023_224721_lightwithsparkles.com\ \(2\).jpeg);
+        }
+        .xide2:hover {
+            transform: translateX(-140px) translateZ(0px) rotateY(0deg) translateY(200px);
+            position: relative;
+            z-index: 2;
+        }
+        .xide3 {
+            opacity: 0;
+            transform: translateX(-500px) translateZ(-50px) rotateY(10deg) translateY(195px);
+            background-image: url(Pages/Web\ capture_18-2-2023_224745_lightwithsparkles.com\ \(2\).jpeg);
+        }
+        .xide3:hover {
+            transform: translateX(-500px) translateZ(0px) rotateY(0deg) translateY(195px);
+            position: relative;
+            z-index: 2;
+        }
+        .xide1 {
+            opacity: 0;
+            transform: translateX(-340px) translateZ(-50px) rotateY(10deg) translateY(-200px);
+            background-image: url(Pages/Shukrats1.jpg);
+        }
+        .xide1:hover {
+            transform: translateX(-340px) translateZ(0px) rotateY(0deg) translateY(-200px);
+            position: relative;
+            z-index: 2;
+        }
+        .xide4 {
+            opacity: 0;
+            transform: translateX(-700px) translateZ(-50px) rotateY(10deg) translateY(00px);
+            background-image: url(Pages/shukrats2.jpg);
+        }
+        .xide4:hover {
+            transform: translateX(-700px) translateZ(0px) rotateY(0deg) translateY(00px);
+            position: relative;
+            z-index: 2;
+        }
+        .hidden {
+            display: none;
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="side2">
+            <div class="one">
+
+            </div>
+        </div>
+        <div class="side1">
+            <div class="one">
+
+            </div>
+        </div>
+        <div class="side">
+            <div class="one">
+
+            </div>
+        </div>
+        <div class="side3">
+            <div class="one">
+
+            </div>
+        </div>
+        <div class="side4">
+            <div class="one">
+
+            </div>
+        </div>
+        
+
+        <div class="lefter">
+          <div class="text">MRI Scanner</div>
+        </div>
+        <div class="center">
+          <div class="explainer"><span>Come closer</span></div>
+          <div class="text">My Portfolio</div>
+          </div>
+        <div class="righter">
+          <div class="text">Light With Sparkles</div>
+        </div>
+
+        <div class="xide2">
+            <div class="one">
+
+            </div>
+        </div>
+        <div class="xide1">
+            <div class="one">
+
+            </div>
+        </div>
+        <div class="xide">
+            <div class="one">
+
+            </div>
+        </div>
+        <div class="xide3">
+            <div class="one">
+
+            </div>
+        </div>
+        <div class="xide4">
+            <div class="one">
+
+            </div>
+        </div>
+        
+    </div>
+        
+    <script>
+        const lefter = document.querySelector(".lefter");
+        const righter = document.querySelector(".righter");
+        const center = document.querySelector(".center");
+        const all = document.querySelector(".all");
+        const side = document.querySelector(".side");
+        const side1 = document.querySelector(".side1");
+        const side2 = document.querySelector(".side2");
+        const side3 = document.querySelector(".side3");
+        const side4 = document.querySelector(".side4");
+        const xide = document.querySelector(".xide");
+        const xide1 = document.querySelector(".xide1");
+        const xide2 = document.querySelector(".xide2");
+        const xide3 = document.querySelector(".xide3");
+        const xide4 = document.querySelector(".xide4");        
+        const sides = [side, side1, side2, side3, side4];
+        const xides = [xide, xide1, xide2, xide3, xide4];
+
+        all.addEventListener("mouseover", () => {
+        [...sides, ...xides].forEach(side => side.classList.add("hidden"));
+        });
+
+        lefter.addEventListener("mouseover", () => {
+            sides.forEach(sidee => sidee.classList.remove("hidden"));
+        });
+        righter.addEventListener("mouseover", () => {
+            xides.forEach(xide => xide.classList.remove("hidden"));
+        });
+
+
+</script>
+</body>
+</html>

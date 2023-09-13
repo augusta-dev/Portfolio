@@ -1,0 +1,164 @@
+#inner, .menu{
+    display: none;
+}
+@media screen and (max-width:576px){
+    .menu {
+        --color: #2ADFFF;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        position: relative;
+        border: none;
+        background: none;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: transparent;
+        font-size: 1rem;
+        float: right;
+        margin-right: 10px;
+        margin-top: 15px;
+        z-index: 3;
+        display: block;
+      }
+      
+      .menu svg {
+        width: 64px;
+        height: 48px;
+        top: -6px;
+        left: 0px;
+        stroke: var(--color);
+        stroke-width: 4px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        display: block;
+        position: absolute;
+      }
+      
+      .menu svg path {
+        transition: stroke-dasharray var(--duration, 0.3s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, 0.3s) var(--easing, ease) var(--delay, 0s);
+        stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+        stroke-dashoffset: var(--offset, 126px);
+        transform: translateZ(0);
+      }
+      
+      .menu svg path:nth-child(2) {
+        --duration: 0.2s;
+        --easing: ease-in;
+        --offset: 100px;
+        --array-2: 74px;
+      }
+      
+      .menu svg path:nth-child(3) {
+        --offset: 133px;
+        --array-2: 107px;
+      }
+      
+      .menu.active svg path {
+        --offset: 57px;
+      }
+      
+      .menu.active svg path:nth-child(1),
+      .menu.active svg path:nth-child(3) {
+        --delay: 0.15s;
+        --easing: cubic-bezier(0.2, 0.4, 0.2, 1.1);
+      }
+      
+      .menu.active svg path:nth-child(2) {
+        --duration: 0.2s;
+        --offset: 2px;
+        --array-1: 1px;
+      }
+      
+      .menu.active svg path:nth-child(3) {
+        --offset: 58px;
+      }
+      
+      html {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      * {
+        box-sizing: inherit;
+      }
+      
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      #end {
+        display: none;
+      }
+      #inner {
+        background: #0c1110;
+        height: 100vh;
+        width: 100vw;
+        position: fixed; 
+        overflow-y: hidden;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        z-index: 3;
+      }
+      .inner > div > img {
+        height: 30vw;
+      }
+      .inner{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 50px 0;
+      }
+      .inner > h1, .inner > hr, .inner > div {
+        width: 100%;
+      }
+      .inner > hr {
+        background-color: #4a4a4a;
+      }
+      .inner > #onee {
+        margin-bottom: 0;
+        
+      }
+      .inner > .social > a > img {
+        width: 100%;
+        height: auto;
+        
+      }
+      .social > a{
+        width: 10%
+      }
+      .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+      .nav{
+        padding: 20px 0px 0 0px;
+      }
+      .hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+      }
+      
+      .visible {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease-in-out, visibility 0s;
+      }
+      #one:hover, #onee:hover{
+        background-color: #0c1110;
+        color: #fff;
+        text-shadow: 0 0 5px #23a6d5,
+                    0 0 25px #03e9f4,
+                    0 0 50px #23d5ab,
+                    0 0 100px #88ef1cff;
+      }
+}

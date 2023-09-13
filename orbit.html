@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .orbit{
+  width:150px;
+  height:150px;
+  padding:30px;
+  border-radius:50%;
+  background:red content-box;
+  border:1px solid red; /*1st orbit at 105px (30px + 150px/2) */
+  margin:auto;
+  position:relative;
+}
+/* 2nd at 135px  */
+.orbit:before,
+.orbit:after{
+   content:"";
+   position:absolute;
+   top: var(--o,-30px);
+   bottom: var(--o,-30px);
+   left: var(--o,-30px);
+   right: var(--o,-30px);
+   border:inherit;
+   border-radius:inherit
+}
+/* 3rd orbit at 165px*/
+.orbit:after {
+  --o:-60px;
+}
+.orbit span {
+  position:absolute;
+  z-index:1;
+  height:20px;
+  width:20px;
+  background:blue;
+  border-radius:inherit;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(var(--r,0deg)) translateX(var(--d,0px));
+}
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+}   
+    </style>
+</head>
+<body>
+    <div class="orbit">
+        <span></span>
+    </div>
+</body>
+</html>

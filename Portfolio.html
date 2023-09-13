@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Augusta Nwosu | Web Developer</title>
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" href="load.css">
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="background.css">
+      <link rel="stylesheet" href="gradient.css" id="color">
+      <link rel="stylesheet" href="wobble.css">
+      <link rel="stylesheet" href="laptops.css">
+      <link rel="stylesheet" href="tablets.css">
+      <link rel="stylesheet" href="mobile-width.css">
+      <link rel="stylesheet" href="bars.css">
+      <link rel="stylesheet" href="projects.css">      
+      <!-- <link rel="stylesheet" href="white background.css"> -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+
+  </head>
+  <body>
+    <main id="main">
+      <div id="landing" class="scroll">
+        <div class="containers" id="inner">
+          <div class="inner">
+            <div>
+              <img src="mecha 12.png" alt="" style="height:140px">
+            </div>
+
+            <h1 class="subtitle" id="onee">Web Developer</h1>
+            <hr>
+            <div class="is-hoverable">      
+                
+                <a class="navbar-item wobble" href="#landing" id="one" data-animation="spin">
+                    Home
+                </a>
+                <a class="navbar-item wobble" href="#about-2" id="one" data-animation="spin">
+                    About
+                </a>
+                <a class="navbar-item wobble" href="#projects-container" id="one" data-animation="spin">
+                    Projects
+                </a>
+                <a class="navbar-item wobble" href="#contact-container" id="onee" data-animation="spin">
+                    Contact
+                </a>
+            
+            </div>
+
+            <hr>
+
+            <div class="social">
+                <img src="images/insta2.png" alt="">
+                <img src="images/github2.png" alt="">
+                <img src="images/linkedin2.png" alt="">
+            </div>
+          </div>
+        </div>
+        <section id="circles">
+          <a id="on" href="#landing" class="item" data-type="shadow"  aria-hidden="true"></a>
+          <a id="tw" href="#about-2" class="item" data-type="shadow"  aria-hidden="false"></a>
+          <a id="thre" href="#projects-container" class="item" data-type="shadow"  aria-hidden="true"></a>
+          <a id="fou" href="#contact-container" class="item" data-type="shadow"  aria-hidden="false"></a>
+        </section>
+        <div class="container is-fluid" id="nav-area">
+            <nav class="is-transparent nav is-sticky">
+                <div class="logo" id="left"></div>
+                <button class="menu">
+                  <svg viewBox="0 0 64 48">
+                      <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
+                      <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
+                      <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
+                  </svg>
+                </button>
+                
+                <!-- <button id="right" class="hamburger hamburger--emphatic" type="button" data-target="#html">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button> -->
+              
+              <div class="navbar-end" id="end">
+                <div class="columns mobile" id="columns">
+                  <a href="#landing" class="column gradient wobble" id="home" data-animation="spin"> Home</a>
+                  <a href="#about-2" class="column gradient wobble" id="about" data-animation="spin"> About Me</a>
+                  <a href="#projects-container" class="column gradient wobble" id="projects" data-animation="spin">Projects</a>
+                  <a href="#contact-container" class="column gradient wobble" id="contact" data-animation="spin"> Contact</a>
+              </div>
+              </div>
+            </nav>
+
+        </div>
+        <div class="container is-fluid" id="box">
+          <h1 class="title is-1 gradient first blurry" id="title">I'm Augusta Nwosu.</h1>
+          <h1 class="title is-1 gradient second blurry" id="title">A Web Developer</h1>
+          <h1 class="title is-1 gradient based third blurry" id="title"> based in Turkey.</h1>
+          <h2 class="text subtitle subheading" id="text">I am a skilled front-end developer with experience in HTML, CSS, JavaScript, and various front-end frameworks. I am passionate about designing and building user-centered, visually appealing websites and applications that provide an exceptional user experience. I love learning.</h2>
+          
+          <a href="https://wa.me/905466440761?text=Hi!%20I%20have%20a%20proposal." target="_blank" class="button wobble" data-animation="spin" id="button">Let's Chat</a>
+        </div>
+      </div>
+    </main>
+    <script>
+      const inner = document.querySelector('#inner');
+      const html = document.querySelector('html');
+
+      inner.classList.add('hidden');
+
+      document.querySelectorAll('.menu').forEach(btn => {
+        btn.addEventListener('click', e => {
+          btn.classList.toggle('active');
+
+          if (btn.classList.contains('active')) {
+            inner.classList.remove('hidden');
+            inner.classList.add('visible');
+            html.classList.add('full-height');
+          } else {
+            inner.classList.remove('visible');
+            inner.classList.add('hidden');
+            html.classList.remove('full-height');
+          }
+        });
+      });
+
+      
+    </script>
+    <script src="wobble.js"></script>
+    <script src="wobbless.js"></script>
+  </body>
+</html>
